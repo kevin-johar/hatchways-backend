@@ -13,17 +13,16 @@ router.get('/ping', (req, res) => {
 
 //GET Posts filtered by tags,
 router.get('/posts', async (req, res) => {
+  // Request Parameter Cleansing
   let { sortBy, direction, tags } = req.query;
   sortBy = sortBy?.trim() === "" ? undefined : sortBy;
   direction = direction?.trim() === "" ? undefined : direction;
   tags = tags?.trim() === "" ? undefined : tags;
 
-  let error = {};
-  let hatchwayAPI = "https://api.hatchways.io/assessment/blog/posts";
-
   console.log("[API] Getting Posts with Parameters: ", {tags, sortBy, direction});
 
   // Parameter Checking; Multiple parameters might be invalid
+  let error = {};
   if (!tags) {
     error.tags = "Tags parameter is required";
   }
@@ -39,6 +38,7 @@ router.get('/posts', async (req, res) => {
   } else {
 
     // Fetching data
+    let hatchwayAPI = "https://api.hatchways.io/assessment/blog/posts";
     const tags = UtilityService.convertTagsToArray(req.query.tags);
     let posts = await Promise.all(tags.map((tag) => {
       const cachedPosts = CacheService.getCachedPosts(tag);
@@ -49,7 +49,7 @@ router.get('/posts', async (req, res) => {
       }
       return HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
     }));
-
+    // Promise.all sandwiches array in an array
     posts = posts.flat();
 
     // Transforming Data
