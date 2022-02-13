@@ -1,6 +1,6 @@
 // First element is default
 export const directionValues = {
-  default: 'desc',
+  default: 'asc',
   desc: 'desc',
   asc: 'asc'
 };
