@@ -1,6 +1,6 @@
-export const utility = {};
+export const UtilityService = {};
 
-utility.convertTagsToArray = (tags) => {
+UtilityService.convertTagsToArray = (tags) => {
   const strTags= String(tags);
   return strTags.split(',').map((tag) => tag.trim());
 };

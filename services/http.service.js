@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export const http = {};
+export const HttpService = {};
 
-http.getPostByTag = async (url) => {
+HttpService.getPostsByTag = async (url) => {
+  console.log(url);
   return axios
     .get(url)
     .then((res) => {
