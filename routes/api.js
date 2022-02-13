@@ -17,6 +17,7 @@ router.get('/posts', async (req, res) => {
   let error = {};
   let hatchwayAPI = "https://api.hatchways.io/assessment/blog/posts";
 
+  console.log("[API] Getting Posts with Parameters: ", {tags, sortBy, direction});
   // Parameter Checking; Multiple parameters might be invalid
   if (!tags) {
     error.tags = "Tags parameter is required";
@@ -28,6 +29,7 @@ router.get('/posts', async (req, res) => {
     error.direction = "direction parameter is invalid. (desc, asc)";
   }
   if(Object.keys(error).length > 0) {
+    console.log("[API] Invalid Parameters: ", error);
     res.status(400).send({error});
   } else {
 
@@ -36,10 +38,10 @@ router.get('/posts', async (req, res) => {
     const posts = await Promise.all(tags.map((tag) => {
       const cachedPosts = UtilityService.getCachedPosts(tag);
       if (!!cachedPosts) {
-        console.log('Cached');
+        // Keeps data fresh, while giving potentially stale data to users very quickly
+        HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
         return cachedPosts;
       }
-      console.log('Not Cached');
       return HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
     }));
 
