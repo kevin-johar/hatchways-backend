@@ -14,10 +14,15 @@ router.get('/ping', (req, res) => {
 //GET Posts filtered by tags,
 router.get('/posts', async (req, res) => {
   let { sortBy, direction, tags } = req.query;
+  sortBy = sortBy?.trim() === "" ? undefined : sortBy;
+  direction = direction?.trim() === "" ? undefined : direction;
+  tags = tags?.trim() === "" ? undefined : tags;
+
   let error = {};
   let hatchwayAPI = "https://api.hatchways.io/assessment/blog/posts";
 
   console.log("[API] Getting Posts with Parameters: ", {tags, sortBy, direction});
+
   // Parameter Checking; Multiple parameters might be invalid
   if (!tags) {
     error.tags = "Tags parameter is required";
@@ -35,7 +40,7 @@ router.get('/posts', async (req, res) => {
 
     // Fetching data
     const tags = UtilityService.convertTagsToArray(req.query.tags);
-    const posts = await Promise.all(tags.map((tag) => {
+    let posts = await Promise.all(tags.map((tag) => {
       const cachedPosts = CacheService.getCachedPosts(tag);
       if (!!cachedPosts) {
         // Keeps data fresh, while giving cached data to users very quickly (3.54s -> 0.85s)
@@ -45,18 +50,17 @@ router.get('/posts', async (req, res) => {
       return HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
     }));
 
-    // Transforming Data
-    let removedDuplicates = [];
-    if(tags.length > 1) {
-      const flattenedPosts = posts.flat();
+    posts = posts.flat();
 
-      removedDuplicates = UtilityService.removeDuplicates(flattenedPosts);
+    // Transforming Data
+    if(tags.length > 1) {
+      posts = UtilityService.removeDuplicates(posts);
     }
-    let finalPosts = [];
-    if(!!sortBy || !!direction) {
-      finalPosts = UtilityService.sortPosts(removedDuplicates, sortBy, direction);
+    if(!!sortBy?.trim() || !!direction?.trim()) {
+      posts = UtilityService.sortPosts(posts, sortBy, direction);
+      // fs.writeFileSync(path.resolve(`data-3.json`), JSON.stringify(posts));
     }
-    res.status(200).send({posts: finalPosts});
+    res.status(200).send({posts});
   }
 });
 

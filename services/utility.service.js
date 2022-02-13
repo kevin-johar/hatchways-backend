@@ -1,4 +1,5 @@
 import { directionValues } from '../models/posts-request/directionValues.model.js';
+import { sortByValues } from '../models/posts-request/sortByValues.model.js';
 
 export const UtilityService = {};
 
@@ -22,14 +23,14 @@ UtilityService.removeDuplicates = (arr) => {
   return uniquePosts;
 }
 
-UtilityService.sortPosts = (arr, sortBy, direction) => {
+UtilityService.sortPosts = (arr, sortBy = sortByValues.default, direction = directionValues.default) => {
   // Sorts in place
   return arr.sort(
     (postA, postB) => {
       console.log({direction, sortBy, postA: postA[sortBy], postB: postB[sortBy]});
 
       return direction === directionValues.desc ?
-        postA[sortBy] - postB[sortBy] : // Descending
-      -1*(postA[sortBy] - postB[sortBy]); // Ascending
+        -1*(postA[sortBy] - postB[sortBy]) : // Descending
+            postA[sortBy] - postB[sortBy]; // Ascending
     });
 }
