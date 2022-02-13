@@ -1,14 +1,14 @@
-let express = require("express");
+import express from 'express';
 let router = express.Router();
 
 //GET Ping API
 router.get('/ping', (req, res) => {
-  res.send({success: true}, 200);
+  res.status(200).send({success: true});
 });
 
 //GET Posts filtered by tags,
 router.get('/posts', (req, res) => {
-  res.send({success: true}, 200);
+  res.status(200).send({success: true});
 });
 
-module.exports = router;
+export default router;
