@@ -3,6 +3,7 @@ import { UtilityService } from '../services/utility.service.js';
 import { sortByValues } from '../models/posts-request/sortByValues.js';
 import { directionValues } from '../models/posts-request/directionValues.js';
 import { HttpService } from '../services/http.service.js';
+import * as fs from 'fs';
 let router = express.Router();
 
 //GET Ping API
@@ -12,24 +13,41 @@ router.get('/ping', (req, res) => {
 
 //GET Posts filtered by tags,
 router.get('/posts', async (req, res) => {
+  let { sortBy, direction, tags } = req.query;
   let error = {};
   let hatchwayAPI = "https://api.hatchways.io/assessment/blog/posts";
 
-  if (!req.query || !req.query.tags) {
+  // Parameter Checking; Multiple parameters might be invalid
+  if (!tags) {
     error.tags = "Tags parameter is required";
   }
-  if (req.query.sortBy && !sortByValues.hasOwnProperty(req.query.sortBy)) {
+  if (sortBy && !sortByValues.hasOwnProperty(sortBy)) {
     error.sortBy = "sortBy parameter is invalid. (id, reads, likes, popularity)";
   }
-  if (req.query.direction && !directionValues.hasOwnProperty(req.query.direction)) {
+  if (direction && !directionValues.hasOwnProperty(direction)) {
     error.direction = "direction parameter is invalid. (desc, asc)";
   }
   if(Object.keys(error).length > 0) {
     res.status(400).send({error});
   } else {
+
+    // Fetching data
     const tags = UtilityService.convertTagsToArray(req.query.tags);
-    const posts = await Promise.all(tags.map((tag) => HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`)));
+    const posts = await Promise.all(tags.map((tag) => {
+      const cachedPosts = UtilityService.getCachedPosts(tag);
+      if (!!cachedPosts) {
+        console.log('Cached');
+        return cachedPosts;
+      }
+      console.log('Not Cached');
+      return HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
+    }));
+
+    // Transforming Data
     const flattenedPosts = posts.flat();
+
+    UtilityService.sortAndFilterArray(flattenedPosts, sortBy = sortByValues.default, direction = directionValues.default);
+
     res.status(200).send({posts: flattenedPosts});
   }
 });
