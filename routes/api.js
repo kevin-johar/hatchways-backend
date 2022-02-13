@@ -1,9 +1,10 @@
 import express from 'express';
 import { UtilityService } from '../services/utility.service.js';
-import { sortByValues } from '../models/posts-request/sortByValues.js';
-import { directionValues } from '../models/posts-request/directionValues.js';
+import { sortByValues } from '../models/posts-request/sortByValues.model.js';
+import { directionValues } from '../models/posts-request/directionValues.model.js';
 import { HttpService } from '../services/http.service.js';
 import * as fs from 'fs';
+import * as path from 'path';
 let router = express.Router();
 
 //GET Ping API
@@ -46,11 +47,17 @@ router.get('/posts', async (req, res) => {
     }));
 
     // Transforming Data
-    const flattenedPosts = posts.flat();
+    let removedDuplicates = [];
+    if(tags.length > 1) {
+      const flattenedPosts = posts.flat();
 
-    UtilityService.sortAndFilterArray(flattenedPosts, sortBy = sortByValues.default, direction = directionValues.default);
-
-    res.status(200).send({posts: flattenedPosts});
+      removedDuplicates = UtilityService.removeDuplicates(flattenedPosts);
+    }
+    let finalPosts = [];
+    if(!!sortBy || !!direction) {
+      finalPosts = UtilityService.sortPosts(removedDuplicates, sortBy, direction);
+    }
+    res.status(200).send({posts: finalPosts});
   }
 });
 
