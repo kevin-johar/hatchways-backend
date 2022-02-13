@@ -2,8 +2,9 @@
   "name": "walnut-backend-assessment",
   "version": "1.0.0",
   "description": "Backend assessment for the junior dev role at Walnut.",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "jest"
   },
   "repository": {
@@ -17,7 +18,6 @@
   },
   "homepage": "https://github.com/kevin-johar/walnut-backend-assessment#readme",
   "devDependencies": {
-    "body-parser": "^1.19.1",
     "express": "^4.17.2",
     "supertest": "^6.2.2"
   },
