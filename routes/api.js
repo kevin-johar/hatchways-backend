@@ -19,18 +19,19 @@ router.get('/posts', async (req, res) => {
     error.tags = "Tags parameter is required";
   }
   if (req.query.sortBy && !sortByValues.hasOwnProperty(req.query.sortBy)) {
-    error.sortBy = "sortBy parameter is invalid";
+    error.sortBy = "sortBy parameter is invalid. (id, reads, likes, popularity)";
   }
   if (req.query.direction && !directionValues.hasOwnProperty(req.query.direction)) {
-    error.direction = "direction parameter is invalid";
+    error.direction = "direction parameter is invalid. (desc, asc)";
   }
   if(Object.keys(error).length > 0) {
     res.status(400).send({error});
+  } else {
+    const tags = UtilityService.convertTagsToArray(req.query.tags);
+    const posts = await Promise.all(tags.map((tag) => HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`)));
+    const flattenedPosts = posts.flat();
+    res.status(200).send({posts: flattenedPosts});
   }
-
-  const tags = UtilityService.convertTagsToArray(req.query.tags);
-  const posts = await Promise.all(tags.map((tag) => HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`)));
-  res.send({posts}, 200);
 });
 
 export default router;
