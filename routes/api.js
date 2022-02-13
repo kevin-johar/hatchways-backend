@@ -18,10 +18,10 @@ router.get('/posts', async (req, res) => {
   if (!req.query || !req.query.tags) {
     error.tags = "Tags parameter is required";
   }
-  if (req.query.sortBy && (sortByValues.findIndex((value) => req.query.sortBy === value) === -1)) {
+  if (req.query.sortBy && !sortByValues.hasOwnProperty(req.query.sortBy)) {
     error.sortBy = "sortBy parameter is invalid";
   }
-  if (req.query.direction && (directionValues.findIndex((value) => req.query.direction === value) === -1)) {
+  if (req.query.direction && !directionValues.hasOwnProperty(req.query.direction)) {
     error.direction = "direction parameter is invalid";
   }
   if(Object.keys(error).length > 0) {
