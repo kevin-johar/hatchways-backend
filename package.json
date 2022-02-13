@@ -1,0 +1,28 @@
+{
+  "name": "walnut-backend-assessment",
+  "version": "1.0.0",
+  "description": "Backend assessment for the junior dev role at Walnut.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin-johar/walnut-backend-assessment.git"
+  },
+  "author": "Kevin Johar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevin-johar/walnut-backend-assessment/issues"
+  },
+  "homepage": "https://github.com/kevin-johar/walnut-backend-assessment#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "supertest": "^6.2.2"
+  },
+  "dependencies": {
+    "@types/jest": "^27.4.0",
+    "jest": "^27.5.1"
+  }
+}
