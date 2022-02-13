@@ -58,7 +58,6 @@ router.get('/posts', async (req, res) => {
     }
     if(!!sortBy?.trim() || !!direction?.trim()) {
       posts = UtilityService.sortPosts(posts, sortBy, direction);
-      // fs.writeFileSync(path.resolve(`data-3.json`), JSON.stringify(posts));
     }
     res.status(200).send({posts});
   }
