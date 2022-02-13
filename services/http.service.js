@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { UtilityService } from './utility.service.js';
+import { CacheService } from './cache.service.js';
 
 export const HttpService = {};
 
@@ -8,7 +8,7 @@ HttpService.getPostsByTag = async (url, tag) => {
     .get(url)
     .then((res) => {
       console.log("[HTTP Service] - Cached Posts, returning promisified data")
-      UtilityService.cachePosts(res.data.posts, tag);
+      CacheService.cachePosts(res.data.posts, tag);
       return res.data.posts;
     })
     .catch((error) => {

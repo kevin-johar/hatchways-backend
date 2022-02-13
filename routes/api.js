@@ -3,8 +3,7 @@ import { UtilityService } from '../services/utility.service.js';
 import { sortByValues } from '../models/posts-request/sortByValues.model.js';
 import { directionValues } from '../models/posts-request/directionValues.model.js';
 import { HttpService } from '../services/http.service.js';
-import * as fs from 'fs';
-import * as path from 'path';
+import { CacheService } from '../services/cache.service.js';
 let router = express.Router();
 
 //GET Ping API
@@ -37,7 +36,7 @@ router.get('/posts', async (req, res) => {
     // Fetching data
     const tags = UtilityService.convertTagsToArray(req.query.tags);
     const posts = await Promise.all(tags.map((tag) => {
-      const cachedPosts = UtilityService.getCachedPosts(tag);
+      const cachedPosts = CacheService.getCachedPosts(tag);
       if (!!cachedPosts) {
         // Keeps data fresh, while giving cached data to users very quickly (3.54s -> 0.85s)
         HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
