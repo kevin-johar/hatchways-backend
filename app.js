@@ -1,6 +1,5 @@
 const express = require('express');
-const generalRouter = require('./routes/general');
-const postsRouter = require('./routes/blogPosts');
+const apiRouter = require('./routes/api');
 const app = express();
 
 const port = 3000;
@@ -9,10 +8,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 
-app.use('/api', generalRouter);
-app.use('/api/posts', postsRouter);
+app.use('/api', apiRouter);
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 })
 
