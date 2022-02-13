@@ -2,10 +2,11 @@ import axios from 'axios';
 
 export const HttpService = {};
 
-HttpService.getPostsByTag = async (url) => {
+HttpService.getPostsByTag = async (url, tag) => {
   return axios
     .get(url)
     .then((res) => {
+      UtilityService.cachePosts(res.data.posts, tag);
       return res.data.posts;
     })
     .catch((error) => {
