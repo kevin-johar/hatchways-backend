@@ -3,7 +3,7 @@ import { CacheService } from './cache.service.js';
 
 export const HttpService = {};
 
-HttpService.getPostsByTag = async (url, tag) => {
+HttpService.getPostsByTag = (url, tag) => {
   return axios
     .get(url)
     .then((res) => {
