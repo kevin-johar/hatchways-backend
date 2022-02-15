@@ -9,6 +9,9 @@
     "start:test": "NODE_ENV=test nodemon app.js",
     "test": "jest --detectOpenHandles"
   },
+  "jest": {
+    "setupFilesAfterEnv": ["./testSetup.js"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevin-johar/walnut-backend-assessment.git"
@@ -33,6 +36,7 @@
     "babel-jest": "^27.5.1",
     "babel-polyfill": "^6.26.0",
     "jest": "^27.5.1",
+    "jest-extended": "^2.0.0",
     "supertest": "^6.2.2"
   }
 }
