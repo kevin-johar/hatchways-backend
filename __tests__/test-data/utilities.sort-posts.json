@@ -1,0 +1,682 @@
+[
+  [
+    "[sortBy] id, [direction] desc",
+    "id",
+    "desc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      },
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] id, [direction] asc",
+    "id",
+    "asc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] reads, [direction] desc",
+    "reads",
+    "desc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      },
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] reads, [direction] asc",
+    "reads",
+    "asc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] likes, [direction] desc",
+    "likes",
+    "desc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] likes, [direction] asc",
+    "likes",
+    "asc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] popularity, [direction] desc",
+    "popularity",
+    "desc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      },
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      }
+    ]
+  ],
+  [
+    "[sortBy] popularity, [direction] asc",
+    "popularity",
+    "asc",
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      }
+    ],
+    [
+      {
+        "author": "Rylee Paul",
+        "authorId": 9,
+        "id": 1,
+        "likes": 960,
+        "popularity": 0.13,
+        "reads": 50361,
+        "tags": [
+          "tech",
+          "health"
+        ]
+      },
+      {
+        "author": "Zackery Turner",
+        "authorId": 12,
+        "id": 2,
+        "likes": 469,
+        "popularity": 0.68,
+        "reads": 90406,
+        "tags": [
+          "startups",
+          "tech",
+          "history"
+        ]
+      },
+      {
+        "author": "Elisha Friedman",
+        "authorId": 8,
+        "id": 4,
+        "likes": 728,
+        "popularity": 0.88,
+        "reads": 19645,
+        "tags": [
+          "science",
+          "design",
+          "tech"
+        ]
+      }
+    ]
+  ]
+]
