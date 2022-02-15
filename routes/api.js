@@ -44,7 +44,9 @@ router.get('/posts', async (req, res) => {
       const cachedPosts = CacheService.getCachedPosts(tag);
       if (!!cachedPosts) {
         // Keeps data fresh, while giving cached data to users very quickly (3.54s -> 0.85s)
-        HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
+        if (process.env.NODE_ENV !== 'test') {
+          HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
+        }
         return cachedPosts;
       }
       return HttpService.getPostsByTag(hatchwayAPI + `?tag=${tag}`, tag);
