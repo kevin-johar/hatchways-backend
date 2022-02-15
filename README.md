@@ -27,6 +27,22 @@ npm install
 npm run start
 ```
 
+### Test Application
+```
+npm run test
+```
+
+## Technologies Used
+- Node.JS + Express
+- Jest Testing Framework
+  - Jest-Extended, library of extra jest matcher functions
+- Supertest library for testing endpoints
+- Axios for making outgoing requests
+
 ##Fun Notes
 - Application has caching mechanism to reduce response time by up to 75% 🚀
   - Asynchronously the data is still updated, so you are never served super stale data 🤢
+
+##To Improve
+- Caching using Redis as well as an external NoSQL DB to add redundancy to data
+- Didn't' achieve full 100% test coverage, had to skip over some lines of code in the test environment to avoid errors (ex. api.js @ line 48)
