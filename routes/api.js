@@ -39,7 +39,7 @@ router.get('/posts', async (req, res) => {
 
     // Fetching data
     let hatchwayAPI = "https://api.hatchways.io/assessment/blog/posts";
-    const tags = UtilityService.convertTagsToArray(req.query.tags);
+    const tags = UtilityService.convertStringToArray(req.query.tags, ',');
     let posts = await Promise.all(tags.map((tag) => {
       const cachedPosts = CacheService.getCachedPosts(tag);
       if (!!cachedPosts) {
