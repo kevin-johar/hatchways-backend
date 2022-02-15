@@ -3,9 +3,9 @@ import { sortByValues } from '../models/posts-request/sortByValues.model.js';
 
 export const UtilityService = {};
 
-UtilityService.convertTagsToArray = (tags) => {
+UtilityService.convertStringToArray = (tags, delimiter) => {
   const strTags= String(tags);
-  return strTags.split(',').map((tag) => tag.trim());
+  return strTags.split(delimiter).map((tag) => tag.trim());
 };
 
 UtilityService.removeDuplicates = (arr) => {
@@ -27,7 +27,7 @@ UtilityService.sortPosts = (arr, sortBy = sortByValues.default, direction = dire
   // Sorts in place
   return arr.sort(
     (postA, postB) => {
-      console.log({direction, sortBy, postA: postA[sortBy], postB: postB[sortBy]});
+      // console.log({direction, sortBy, postA: postA[sortBy], postB: postB[sortBy]});
 
       return direction === directionValues.desc ?
         -1*(postA[sortBy] - postB[sortBy]) : // Descending

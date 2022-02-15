@@ -5,3 +5,5 @@ export const sortByValues = {
   likes: 'likes',
   popularity: 'popularity'
 };
+
+Object.freeze(sortByValues);
