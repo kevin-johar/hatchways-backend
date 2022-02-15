@@ -2,11 +2,12 @@
   "name": "walnut-backend-assessment",
   "version": "1.0.0",
   "description": "Backend assessment for the junior dev role at Walnut.",
-  "main": "app.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "jest"
+    "start": "nodemon server.js",
+    "start:test": "NODE_ENV=test nodemon app.js",
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
